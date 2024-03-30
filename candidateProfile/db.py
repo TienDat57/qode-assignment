@@ -4,11 +4,16 @@ import pymongo
 class MongoDBClient(object):
    def __init__(self, col, index=None):        
       connection = pymongo.MongoClient(settings.MONGODB_URI)
+      self.name_col = col
       self.db = connection[settings.MONGODB_DB]
       self.collection = self.db[col]
       if index:
          self.collection.create_index(index, unique=True) 
          
+   def refresh_collection(self):
+      self.collection.drop()
+      self.collection = self.db[self.name_col]
+   
    def get_collection(self):
       return self.collection
    
