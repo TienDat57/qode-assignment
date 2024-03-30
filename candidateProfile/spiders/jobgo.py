@@ -2,8 +2,8 @@ from candidateProfile import settings
 import scrapy
 from scrapy.http import Request, FormRequest
 from scrapy.selector import Selector
-from pymongo import MongoClient
-from candidateProfile.parsers.LinkedinParser import LinkedInProfileParser
+from candidateProfile.parsers.JobgoParser import JobGoParser
+
 from bs4.dammit import UnicodeDammit
 from urllib.parse import unquote_plus
 import time
@@ -58,7 +58,7 @@ class JobgoSpider(scrapy.Spider):
                for url in relative_urls:
                   yield Request(url, callback=self.parse)
       elif index_level == 2:
-         personProfile = LinkedInProfileParser.extract_person_profile(hxs)
+         personProfile = JobGoParser.extract_person_profile(hxs)
          linkedin_id = self.get_linkedin_id(response.url)
          linkedin_id = UnicodeDammit(unquote_plus(linkedin_id)).markup
          if linkedin_id:

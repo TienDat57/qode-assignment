@@ -6,5 +6,5 @@ setup(
     name         = 'project',
     version      = '1.0',
     packages     = find_packages(),
-    entry_points = {'scrapy': ['settings = crawlCandidateProfile.settings']},
+    entry_points = {'scrapy': ['settings = candidateProfile.settings']},
 )

@@ -1,6 +1,6 @@
 from candidateProfile.items import PersonProfileItem
 
-class JobgoParser:    
+class JobGoParser:    
     @staticmethod
     def extract_person_profile(hxs):
         personProfile = PersonProfileItem()
