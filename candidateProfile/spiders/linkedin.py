@@ -2,7 +2,6 @@ from candidateProfile import settings
 import scrapy
 from scrapy.http import Request, FormRequest
 from scrapy.selector import Selector
-from pymongo import MongoClient
 from candidateProfile.parsers.LinkedinParser import LinkedInProfileParser
 from bs4.dammit import UnicodeDammit
 from urllib.parse import unquote_plus
