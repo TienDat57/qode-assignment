@@ -5,16 +5,15 @@ class CrawlertestItem(Item):
 
 class PersonProfileItem(Item):
     id = Field()
-    name_linkedin = Field()
+    fullname = Field()
     title = Field()
     location = Field()
     industry = Field()
     current_company = Field()
     past_company = Field()
     education = Field()
-    url = Field()
+    profile_link = Field()
     summary = Field()
-    connection = Field()
     website = Field()
     skill = Field()
     email = Field()
@@ -22,4 +21,3 @@ class PersonProfileItem(Item):
     experience = Field()
     birthday = Field()
     phone = Field()
-    twitter = Field()
