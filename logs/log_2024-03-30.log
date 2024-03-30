@@ -1,0 +1,4 @@
+2024-03-30 23:13:37 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: candidateProfile)
+2024-03-30 23:13:37 [scrapy.utils.log] INFO: Versions: lxml 5.1.0.0, libxml2 2.12.3, cssselect 1.2.0, parsel 1.9.0, w3lib 2.1.2, Twisted 24.3.0, Python 3.9.19 | packaged by conda-forge | (main, Mar 20 2024, 12:50:21) - [GCC 12.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.1.4 24 Oct 2023), cryptography 41.0.7, Platform Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.31
+2024-03-30 23:21:02 [scrapy.utils.log] INFO: Scrapy 2.11.1 started (bot: candidateProfile)
+2024-03-30 23:21:02 [scrapy.utils.log] INFO: Versions: lxml 5.1.0.0, libxml2 2.12.3, cssselect 1.2.0, parsel 1.9.0, w3lib 2.1.2, Twisted 24.3.0, Python 3.9.19 | packaged by conda-forge | (main, Mar 20 2024, 12:50:21) - [GCC 12.3.0], pyOpenSSL 24.1.0 (OpenSSL 3.1.4 24 Oct 2023), cryptography 41.0.7, Platform Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.31
