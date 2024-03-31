@@ -62,7 +62,7 @@ class LinkedinSpider(scrapy.Spider):
             linkedin_id = UnicodeDammit(unquote_plus(linkedin_id)).markup
             if linkedin_id:
                 personProfile['id'] = linkedin_id
-                self.mongodb_candidate.collection.update_one({'url': response.url}, {'$set': personProfile}, upsert=True)
+                self.mongodb_candidate.collection.update_one({'profile_link': response.url}, {'$set': personProfile}, upsert=True)
                 yield personProfile
 
     def determine_level(self, response):

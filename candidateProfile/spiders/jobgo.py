@@ -51,29 +51,9 @@ class JobgoSpider(scrapy.Spider):
    def parse(self, response):
       time.sleep(uniform(1, 10))
       hxs = Selector(response)
-      index_level = self.determine_level(response)
-      if index_level == 1:
-         relative_urls = self.get_top_profile(2, hxs)
-         if relative_urls is not None:
-               for url in relative_urls:
-                  yield Request(url, callback=self.parse)
-      elif index_level == 2:
-         personProfile = JobGoParser.extract_person_profile(hxs)
-         linkedin_id = self.get_linkedin_id(response.url)
-         linkedin_id = UnicodeDammit(unquote_plus(linkedin_id)).markup
-         if linkedin_id:
-               personProfile['id'] = linkedin_id
-               self.mongodb_candidate.collection.update_one({'url': response.url}, {'$set': personProfile}, upsert=True)
-               yield personProfile
-
-   def determine_level(self, response):
-      import re
-      url = response.url
-      if 'search=Search' in url:
-         return 2
-      elif 'profile' in url:
-         return 2
-      return 2
+      personProfile = JobGoParser.extract_person_profile(hxs)
+      self.mongodb_candidate.collection.update_one({'profile_link': response.url}, {'$set': personProfile}, upsert=True)
+      yield personProfile
 
    def __init__(self):
       self.init_links()
